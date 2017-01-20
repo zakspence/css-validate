@@ -1,3 +1,7 @@
-.validate {
-	
+.validate:valid {
+	background-color: red;
+}
+
+.validate:invalid {
+	background-color: green;
 }
