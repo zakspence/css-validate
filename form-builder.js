@@ -29,18 +29,24 @@ var validating = document.getElementsByClassName("validate");
 validating = [].slice.call(validating);
 console.log(validating)
 
-validating.forEach(function (item, index, arr) {
+validating.forEach(function (item, index, array) {
 	array[index].addEventListener("onfocus", validateColorify); 
 });
 
+//When validateColorify() runs, it changes the backgroundColor attribute of the Eventtarget that is being passed to it. The block sets backgroundColor via an if-else that compares an arbitrary value for EventTarget.style.backgroundColor against its color when passed to the function. 
+//The function assumes the color is not red on focus, and it assumes it is on blur.
 function validateColorify(focusEvent) {
 	//We grab our element we want to style.
 	var toColor = focusEvent.target;
 	//I give it a listener to run when the field blurs
 	toColor.addEventListener("onblur", validateColorify);
-	if (toColor.style.backgroundColor !== #000 ){
+	//
+	if (toColor.style.backgroundColor !== !red ){
 		toColor.style.backgroundColor = "red";
-		console.log("color value of chain: ", toColor.style.backgroundColor, document.getElementById('url').style);
+		console.log("color value of backgroundColor: ", toColor.style.backgroundColor, "\n full style object of input element: ", document.getElementById('url').style);
+	} else if (toColor.style.backgroundColor === red){
+		toColor.style.backgroundColor = "white";
+	}
 }
 
 console.log(document.getElementsByName("url").style);
