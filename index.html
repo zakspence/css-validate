@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Banking Form Exercise</title>
+</head>
+<body>
+	<section id="bank-form">
+		<form>
+			<fieldset>
+				<legend>Applicant information</legend>
+				First: <input type="name" name="first-name">
+				Middle: <input type="name" name="middle-name">
+				Last: <input type="name" name="last-name">
+				Street: <input type="text" name="street-address">
+				City:   <input type="text" name="city">
+				State:  <select name="state" id="state-selector"></select>
+				Email: <input type="email" placeholder="myemail@website.com">
+				Telephone: <input type="tel" name="" value="" placeholder="555-867-5309">
+				LinkedIn URL: <input type="url" placeholder="www.linkedin.com/johndoe">
+			</fieldset>
+			<fieldset>
+				<legend>Employment</legend>
+				Occupation: <input type="text" name="occupation">
+				Employer: <input type="text" name="company-name">
+				Employer Address: <input type="text" name="company-address">
+			</fieldset>
+			<fieldset>
+				<legend>Loan details</legend>
+				Type: <select name="loan" id="loan-selector"></select>
+				Amount: <input type="number" name="loan-amount" placeholder="30000"><br>
+				Loan duration:
+				<input type="radio" name="duration" value="" placeholder=""> 5 years<br>
+				<input type="radio" name="duration" value="" placeholder=""> 15 years<br>
+				<input type="radio" name="duration" value="" placeholder=""> 30 years<br>
+			</fieldset>
+			<fieldset>
+				<legend>Special considerations</legend>
+				<input type="checkbox" name="misc" value="">I am married
+				<input type="checkbox" name="misc" value="">I live out of state
+				<input type="checkbox" name="misc" value="">I have a down payment
+				<input type="checkbox" name="misc" value="">I have a co-signer
+			</fieldset>
+			What is the reason for your loan application?<br>
+			<input type="text">
+		</form>
+	</section>
+	<script src="form-builder.js"></script>
+</body>
+</html>
