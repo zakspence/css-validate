@@ -9,17 +9,38 @@ var fillElement = function(eId, eType, data ) {
 	
 	for(var i= 0; i < data.length; i++ ){
 		var now= data[i ];
-		console.log(now );
+		// console.log(now );
 		var appendage= document.createElement(eType );
-		console.log(appendage );
+		// console.log(appendage );
 		appendage.value= now
 		appendage.text= now
-		console.log(appendage.value, appendage.text );
+		// console.log(appendage.value, appendage.text );
 		parent.appendChild(appendage );
-		console.log(parent.childNodes );
+		// console.log(parent.childNodes );
 	}
 }
 
 
 fillElement("state-selector", "OPTION", stateList );
 fillElement("loan-selector", "OPTION", loanType );
+
+//I put elements which colors I want to change in 'validating', then make it an ARRAY so I can do ARRAY things. HARRAY!
+var validating = document.getElementsByClassName("validate");
+validating = [].slice.call(validating);
+console.log(validating)
+
+validating.forEach(function (item, index, arr) {
+	array[index].addEventListener("onfocus", validateColorify); 
+});
+
+function validateColorify(focusEvent) {
+	//We grab our element we want to style.
+	var toColor = focusEvent.target;
+	//I give it a listener to run when the field blurs
+	toColor.addEventListener("onblur", validateColorify);
+	if (toColor.style.backgroundColor !== #000 ){
+		toColor.style.backgroundColor = "red";
+		console.log("color value of chain: ", toColor.style.backgroundColor, document.getElementById('url').style);
+}
+
+console.log(document.getElementsByName("url").style);
